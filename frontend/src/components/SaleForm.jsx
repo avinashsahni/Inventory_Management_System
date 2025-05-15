@@ -37,9 +37,13 @@ function SaleForm() {
         <div className="col-md-4">
           <select onChange={e => setProductId(e.target.value)} className="form-select">
             <option>Select product</option>
+            <option value="toys">Toys</option>
+            <option value="cooler">Cooler</option>
+            <option value="fan">Fan</option>
             {products.map(p => (
               <option key={p.id} value={p.id}>{p.name}</option>
             ))}
+
           </select>
         </div>
         <div className="col-md-3">

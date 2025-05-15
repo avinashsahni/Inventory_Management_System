@@ -235,7 +235,7 @@ To initialize git and push your code to GitHub:
 git init
 git add .
 git commit -m "Initial commit - Inventory Management System"
-git remote add origin https://github.com/yourusername/inventory-management-system.git
+git remote add origin https://github.com/avinashsahni/inventory-management-system.git
 git branch -M main
 git push -u origin main
 ```

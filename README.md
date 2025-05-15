@@ -246,13 +246,4 @@ git push -u origin main
 
 MIT License
 
----
 
-If you want help generating any code or configuration files, just ask!
-
-```
-
----
-
-You can simply copy-paste this into your repo’s root `README.md`. Want me to help create `.env.example`, backend boilerplate, or frontend starter files next?
-```

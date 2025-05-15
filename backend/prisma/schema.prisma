@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id             Int             @id @default(autoincrement())
+  name           String
+  description    String?
+  price          Float
+  stock_quantity Int
+  created_at     DateTime        @default(now())
+  updated_at     DateTime        @updatedAt
+  sales          Sale[]
+  inventoryLogs  InventoryLog[]
+}
+
+model Sale {
+  id               Int       @id @default(autoincrement())
+  product_id       Int
+  quantity_sold    Int
+  total_price      Float
+  discount_applied Float?
+  sale_date        DateTime  @default(now())
+  product          Product   @relation(fields: [product_id], references: [id])
+}
+
+model InventoryLog {
+  id              Int       @id @default(autoincrement())
+  product_id      Int
+  quantity_changed Int
+  change_type     String
+  log_date        DateTime  @default(now())
+  product         Product   @relation(fields: [product_id], references: [id])
+}

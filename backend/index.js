@@ -1,9 +1,16 @@
 const express = require('express');
+const cors = require('cors');
 require('dotenv').config();
 
 const prisma = require('./src/utils/prismaClinet');
 const port = process.env.PORT || 3000;
+const frontend_Url = process.env.VITE_API_URL2;
 const app = express();
+
+app.use(cors({
+  origin: frontend_Url,
+  credentials: true
+}));
 
 app.use(express.json());
 
